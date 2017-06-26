@@ -32,7 +32,7 @@ class Heap
 				data[i + 1] = array[i];
 			}
 		};
-		~HEAP() { if (mySize) delete[] data; };
+		~Heap() { if (mySize) delete[] data; };
 		bool empty() { if (mySize == 0) return true; else return false; };
 		T getMax() { return data[1]; };
 		void deleteMaxItem();
