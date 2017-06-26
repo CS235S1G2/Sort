@@ -17,17 +17,16 @@
 template <class T>
 int binarySearch(T array[], T search, int iBegin, int iEnd)
 {
-   int iMiddle = iBegin + ((iEnd - iBegin) / 2);
+   int iMiddle = iBegin + (iEnd - iBegin) / 2;
    
-   if (iBegin >= iEnd)
+   if (iBegin == iEnd)
       return iBegin;
-   if (array[iMiddle] == search)
-      return iMiddle;
-   
    if (search > array[iMiddle])
       return binarySearch(array, search, iMiddle + 1, iEnd);
-   else
-      return binarySearch(array, search, iBegin, iMiddle - 1);
+   else if (array[iMiddle] > search)
+      return binarySearch(array, search, iBegin, iMiddle);
+   
+   return iMiddle;
 }
 
 /*****************************************************
@@ -37,18 +36,30 @@ int binarySearch(T array[], T search, int iBegin, int iEnd)
 template <class T>
 void sortInsertion(T array[], int num)
 {
-   int iShift;
-   for (int iPivot = num - 1; iPivot > 0; --iPivot)
+   int iShift, iPivot, iInsert;
+   T valuePivot;
+   for (iPivot = 1; iPivot < num; iPivot++)
+   {
+      valuePivot = array[iPivot];
+      iInsert = binarySearch(array, valuePivot, 0, iPivot);
+      for (iShift = iPivot - 1; iShift >= iInsert; iShift--)
+      {
+         array[iShift + 1] = array[iShift];
+      } 
+      array[iInsert] = valuePivot;
+   }
+   
+   /*for (int iPivot = 1; iPivot < num; iPivot++)
    {
       T valuePivot = array[iPivot];
-      int iInsert = binarySearch(array, valuePivot, iPivot + 1, num - 1);
-      iInsert--;
-      for (iShift = iPivot; iShift >= iInsert; iShift--)
+      int iShift = iPivot - 1;
+      for (;iShift >= 0 && array[iShift] > valuePivot; --iShift)
       {
-         array[iShift] = array[iShift - 1];
+         array[iShift + 1] = array[iShift];
       }
-      array[iShift] = valuePivot;
-   }
+      array[iShift + 1] = valuePivot;
+      
+   }*/
 }
 
 
