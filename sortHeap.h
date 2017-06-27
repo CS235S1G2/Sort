@@ -3,7 +3,7 @@
  *    Week 11, Sort Heap
  *    Brother Helfrich, CS 235
  * Author:
- *    <your name>
+ *    
  * Summary:
  *    This program will implement the Heap Sort
  ************************************************************************/
@@ -60,6 +60,13 @@ void sortHeap(T array[], int num)
 template<class T>
 inline void Heap<T>::deleteMaxItem()
 {
+	for (int i = 0; i < mySize; i++)
+	{
+		if (i + 2 <= mySize)
+		data[i + 1] = data[i + 2];
+	}
+	data[mySize] = NULL;
+	mySize--;
 }
 
 template<class T>
