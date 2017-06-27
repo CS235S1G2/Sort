@@ -20,8 +20,10 @@ void merge(T array[], int l, int m, int r)
 	int n2 = r - m;
 
 	// temp arrays
-	T L[n1];
-	T R[n2];
+	T * L;
+	T * R;
+	L = new T[n1];
+	R = new T[n2];
 
 	// copy data
 	for (i = 0; i < n1; i++)
