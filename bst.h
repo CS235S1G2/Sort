@@ -10,7 +10,6 @@
 
 #ifndef BST_H
 #define BST_H
-
 #include "bnode.h"    // for BinaryNode
 #include "stack.h"    // for Stack
 
