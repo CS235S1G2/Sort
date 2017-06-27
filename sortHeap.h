@@ -36,7 +36,8 @@ class Heap
 		bool empty() { if (mySize == 0) return true; else return false; };
 		T getMax() { return data[1]; };
 		void deleteMaxItem();
-		Heap heapify();
+		void heapify();
+		//Heap heapify();
 		void sort();
 		void perlocateDown();
 	private:
@@ -55,7 +56,6 @@ void sortHeap(T array[], int num)
 }
 
 
-#endif // SORT_HEAP_H
 
 template<class T>
 inline void Heap<T>::deleteMaxItem()
@@ -70,9 +70,9 @@ inline void Heap<T>::deleteMaxItem()
 }
 
 template<class T>
-inline Heap Heap<T>::heapify()
+inline void Heap<T>::heapify()
 {
-	return Heap();
+	//return Heap();
 }
 
 template<class T>
@@ -84,3 +84,4 @@ template<class T>
 inline void Heap<T>::perlocateDown()
 {
 }
+#endif // SORT_HEAP_H

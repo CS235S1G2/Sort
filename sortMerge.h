@@ -20,7 +20,8 @@ void merge(T array[], int l, int m, int r)
 	int n2 = r - m;
 
 	// temp arrays
-	int L[n1], R[n2];
+	T L[n1];
+	T R[n2];
 
 	// copy data
 	for (i = 0; i < n1; i++)
@@ -84,7 +85,8 @@ void merge(T array[], int l, int m, int r)
    }*/
 }
 
-void sort(int array[], int l, int r)
+template <class T>
+void sort(T array[], int l, int r)
 {
 	if (l < r)
 	{
