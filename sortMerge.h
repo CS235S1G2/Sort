@@ -63,29 +63,6 @@ void merge(T array[], int l, int m, int r)
 		j++;
 		k++;
 	}
-/*	int i = 1;
-	int j = iEnd2 + 1;
-	int k = 1;
-	while (i <= iEnd2 && j <= end2 * 2)
-	{
-		destination[k++] = (destination[j] < source[i]) ? destination[j++] : source[i++];
-
-	}
-	while (i <= iEnd2)
-	{
-		destination[k++] = source[i++];
-	}
- /*  int iEnd1 = iBegin2 - 1;
-   int i1 = iBegin1;
-   int i2 = iBegin2;
-   
-   for (int iDest = 0; iDest < (iEnd2 - (iBegin1 + 1)); iDest++)
-   {
-      if (i1 <= iEnd1 && (12 == iEnd2 || source[i2] > source[i1]))
-         destination[iDest] = source[i1++];
-      else
-         destination[iDest] = source[i2++];
-   }*/
 }
 
 template <class T>
@@ -108,19 +85,6 @@ template <class T>
 void sortMerge(T array[], int num)
 {
 	sort(array, 0, num - 1);
-  /* T source[] = array;
-   
-   do
-   {
-      
-   } while (numMerges > 1);
-   
-   if (array != source)
-   {
-      for (int i = 0; i < n - 1; i++)
-         array[i] = source[i];
-   }*/
-   
 }
 
 
