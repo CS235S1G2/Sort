@@ -29,8 +29,9 @@ void merge(T array[], int l, int m, int r)
 	for (i = 0; i < n1; i++)
 		L[i] = array[l + i];
 	for (j = 0; j < n2; j++)
-		R[j] = array[m + l + j];
-	i, j = 0;
+		R[j] = array[m + 1 + j];
+	i = 0;
+	j = 0;
 	k = l;
 	while (i < n1 && j < n2)
 	{
